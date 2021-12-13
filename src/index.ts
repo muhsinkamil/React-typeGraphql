@@ -1,3 +1,4 @@
+require("dotenv").config();
 import "reflect-metadata";
 import { ApolloServer } from "apollo-server-express";
 import * as Express from "express";
@@ -27,9 +28,9 @@ const main = async () => {
   await apolloServer.start();
   apolloServer.applyMiddleware({ app, path: "/api/graphql" });
 
-  app.listen(3000, () =>
+  app.listen(process.env.APP_PORT, () =>
     console.log(
-      `app started in http://localhost:3000${apolloServer.graphqlPath} `
+      `app started in ${process.env.BASE_PATH}${apolloServer.graphqlPath} `
     )
   );
 };
