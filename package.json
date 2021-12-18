@@ -6,7 +6,7 @@
   "scripts": {
     "migrate": "knex migrate:latest --knexfile knexfile.ts",
     "migrate:down": "knex migrate:down --knexfile knexfile.ts",
-    "start": "nodemon src/index.js"
+    "start": "ts-node-dev -r tsconfig-paths/register  ./src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -37,6 +37,8 @@
     "@types/node": "^16.11.12",
     "nodemon": "^2.0.15",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.3"
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.3",
+    "tsconfig-paths": "^3.12.0"
   }
 }

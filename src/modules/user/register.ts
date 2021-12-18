@@ -1,4 +1,4 @@
-import { Int, Query, Resolver } from "type-graphql";
+import { Int, Mutation, Query, Resolver } from "type-graphql";
 
 @Resolver()
 export class HelloResolver {
@@ -7,8 +7,8 @@ export class HelloResolver {
     return "hello world";
   }
 
-  @Query(() => Int)
-  heyThere() {
+  @Mutation(() => Int)
+  async register() {
     return 2;
   }
 }

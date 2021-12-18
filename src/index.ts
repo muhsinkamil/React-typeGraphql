@@ -5,11 +5,11 @@ import * as Express from "express";
 import { buildSchema } from "type-graphql";
 import setUpDb from "../models";
 import { Environment } from "types";
-import resolvers from "modules";
+import { Resolvers } from "modules";
 
 const main = async () => {
   const schema = await buildSchema({
-    resolvers,
+    resolvers: Resolvers,
   });
 
   setUpDb(process.env.ENVIRONMENT as Environment);

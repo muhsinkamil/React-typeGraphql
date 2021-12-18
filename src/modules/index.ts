@@ -1,3 +1,3 @@
 import { HelloResolver } from "./user";
 
-export default [HelloResolver] as const;
+export const Resolvers = [HelloResolver] as const;
