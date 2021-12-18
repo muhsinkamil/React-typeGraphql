@@ -3,6 +3,8 @@ import "reflect-metadata";
 import { ApolloServer } from "apollo-server-express";
 import * as Express from "express";
 import { buildSchema, Int, Query, Resolver } from "type-graphql";
+import setUpDb from "../models";
+import { Environment } from "types";
 
 @Resolver()
 class HelloResolver {
@@ -22,6 +24,7 @@ const main = async () => {
     resolvers: [HelloResolver],
   });
 
+  setUpDb(process.env.ENVIRONMENT as Environment);
   const apolloServer = new ApolloServer({ schema });
   const app = Express();
 
