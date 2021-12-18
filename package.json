@@ -6,7 +6,7 @@
   "scripts": {
     "migrate": "knex migrate:latest --knexfile knexfile.ts",
     "migrate:down": "knex migrate:down --knexfile knexfile.ts",
-    "hello": "nodemon src/index.js"
+    "start": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
