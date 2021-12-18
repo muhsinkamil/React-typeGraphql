@@ -2,9 +2,12 @@ import { Knex } from "knex";
 
 export async function up(knex: Knex): Promise<void> {
   return knex.schema.createTable("users", (table) => {
-    table.increments();
-    table.string("first_name");
-    table.string("last_name");
+    table.increments("id").primary();
+    table.string("firstName");
+    table.string("lastName");
+    table.string("email");
+    table.string("password");
+    table.integer("age");
     table.timestamps(true, true);
   });
 }

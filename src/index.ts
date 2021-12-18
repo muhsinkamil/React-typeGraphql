@@ -2,26 +2,14 @@ require("dotenv").config();
 import "reflect-metadata";
 import { ApolloServer } from "apollo-server-express";
 import * as Express from "express";
-import { buildSchema, Int, Query, Resolver } from "type-graphql";
+import { buildSchema } from "type-graphql";
 import setUpDb from "../models";
 import { Environment } from "types";
-
-@Resolver()
-class HelloResolver {
-  @Query(() => String)
-  hello() {
-    return "hello world";
-  }
-
-  @Query(() => Int)
-  heyThere() {
-    return 2;
-  }
-}
+import resolvers from "modules";
 
 const main = async () => {
   const schema = await buildSchema({
-    resolvers: [HelloResolver],
+    resolvers,
   });
 
   setUpDb(process.env.ENVIRONMENT as Environment);
