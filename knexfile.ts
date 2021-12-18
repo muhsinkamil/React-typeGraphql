@@ -1,5 +1,7 @@
 // Update with your config settings. Made with command "knex init -x ts"
 
+import { knexSnakeCaseMappers } from "objection";
+
 export default {
   development: {
     client: "postgresql",
@@ -15,6 +17,7 @@ export default {
     migrations: {
       directory: "./db/migrations",
     },
+    ...knexSnakeCaseMappers(),
   },
 
   staging: {
@@ -30,8 +33,8 @@ export default {
     },
     migrations: {
       directory: "./db/migrations",
-      // tableName: "knex_migrations",
     },
+    ...knexSnakeCaseMappers(),
   },
 
   production: {
@@ -47,7 +50,7 @@ export default {
     },
     migrations: {
       directory: "./db/migrations",
-      // tableName: "knex_migrations",
     },
+    ...knexSnakeCaseMappers(),
   },
 };
