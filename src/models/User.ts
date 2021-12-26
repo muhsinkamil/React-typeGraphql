@@ -1,3 +1,5 @@
+import { ValidationError } from "apollo-server-errors";
+import { checkIfEmailExists } from "helpers";
 import { Id, Model } from "objection";
 import { Field, ID, ObjectType, Root } from "type-graphql";
 

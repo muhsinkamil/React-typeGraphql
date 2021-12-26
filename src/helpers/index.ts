@@ -1,0 +1,1 @@
+export { checkIfEmailExists } from "./checkIfEmailExists";
