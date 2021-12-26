@@ -1,5 +1,5 @@
 import { Id, Model } from "objection";
-import { Field, ID, Int, ObjectType } from "type-graphql";
+import { Field, ID, ObjectType, Root } from "type-graphql";
 
 @ObjectType()
 export default class User extends Model {
@@ -12,8 +12,10 @@ export default class User extends Model {
   @Field()
   lastName: string;
 
-  @Field()
-  name: string;
+  @Field(() => String)
+  name(@Root() parent: User): string {
+    return `${parent.firstName} ${parent.lastName}`;
+  }
 
   @Field()
   email: string;
