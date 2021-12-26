@@ -3,7 +3,7 @@ import "reflect-metadata";
 import { ApolloServer } from "apollo-server-express";
 import * as Express from "express";
 import { buildSchema } from "type-graphql";
-import setUpDb from "../models";
+import { setUpDb } from "models";
 import { Environment } from "types";
 import { Resolvers } from "modules";
 
@@ -26,4 +26,4 @@ const main = async () => {
   );
 };
 
-main();
+main().catch((err) => console.error(err));

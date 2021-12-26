@@ -1,1 +1,1 @@
-export { HelloResolver } from "./register";
+export { RegisterResolver } from "./register";
