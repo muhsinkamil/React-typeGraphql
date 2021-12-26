@@ -22,8 +22,8 @@ export default class User extends Model {
 
   password: string;
 
-  @Field()
-  age: number;
+  @Field({ nullable: true })
+  age?: number;
 
   static jsonSchema = {
     type: "object",

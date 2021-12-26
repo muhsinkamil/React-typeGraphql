@@ -18,6 +18,6 @@ export class RegisterUserInputType {
   @Field()
   password: string;
 
-  @Field()
+  @Field({ nullable: true })
   age: number;
 }
